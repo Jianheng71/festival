@@ -1,0 +1,1 @@
+create table festivals (id uuid primary key default gen_random_uuid(), date date not null, name text not null, tag text, copy text, image_url text, created_at timestamp with time zone default now()); create bucket if not exists festival-images public;

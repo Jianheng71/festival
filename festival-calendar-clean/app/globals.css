@@ -1,0 +1,12 @@
+@tailwind base;@tailwind components;@tailwind utilities;
+@layer base {
+  :root { --background: 42 33% 97%; --foreground: 30 10% 20%; --card: 40 30% 98%; --card-foreground: 30 10% 20%; --popover: 40 30% 98%; --popover-foreground: 30 10% 20%; --primary: 30 10% 20%; --primary-foreground: 42 33% 97%; --secondary: 38 20% 93%; --secondary-foreground: 30 10% 20%; --muted: 38 15% 90%; --muted-foreground: 30 5% 45%; --accent: 25 40% 55%; --accent-foreground: 42 33% 97%; --destructive: 0 72% 51%; --destructive-foreground: 42 33% 97%; --border: 35 15% 88%; --input: 35 15% 88%; --ring: 30 10% 30%; --radius: 0.75rem; }
+  * { @apply border-border; } body { @apply bg-background text-foreground; }
+}
+@layer utilities {
+  .font-serif { font-family: var(--font-serif), serif; } .font-sans { font-family: var(--font-sans), sans-serif; }
+  .paper-texture { background-color: hsl(42 33% 97%); background-image: radial-gradient(circle at 20% 50%, rgba(0,0,0,0.015) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(0,0,0,0.015) 0%, transparent 50%); }
+  .paper-grain { position: relative; overflow: hidden; isolation: isolate; border-radius: var(--radius); box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.06); }
+  @keyframes fade-in { from { opacity: 0; } to { opacity: 1; } } @keyframes scale-in { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+  .animate-fade-in { animation: fade-in 0.5s ease; } .animate-scale-in { animation: scale-in 0.4s ease; }
+}
